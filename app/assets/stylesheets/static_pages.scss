@@ -1,0 +1,66 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding-top: 70px;
+}
+
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+#welcomeHeader {
+	font-family: 'Megrim', cursive;
+	color: #FF3C38;
+	text-align: center; 
+}
+
+h3 {
+	color: #5B2333;
+	text-align: center;
+	font-family: 'Helvetica';
+}
+
+.navbar {
+display: inline-block;
+	background-color: #564D4A;
+	border-color: #564D4A;
+}
+
+.navbar a {
+	color: #F7F4F3;
+}
+
+.navbar a:hover {
+	text-decoration: none;
+	color: #BA1B1D;
+}
+
+.navbar ul li {
+	float: right;
+	margin-top: 17px;
+	padding: 10px;
+	list-style-type: none; /**removes list bullet points**/
+}
+
+h1 {
+	font-family: 'Megrim', cursive;
+	color: #FF3C38;
+}
+
+footer  {
+	position: absolute;
+	height: 40px;
+	left: 0px;
+	bottom: 0px;
+}
