@@ -20,7 +20,7 @@
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td><%= product.image_url %></td>
-        <td><%= product.color %></td>
+        <td><%= product.colour %></td>
         <td><%= product.price %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
@@ -37,6 +37,7 @@
       <%= image_tag(product.image_url, class: "img-responsive") %>
       <a href=“#”><h4><%= product.name %></h4></a>
       <p><%= product.description %></p>
+      <p><%= product.colour %></p>
       <strong><%= product.price %></strong>
     </div>
     <% end %>
