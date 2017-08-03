@@ -30,17 +30,20 @@
   </tbody>
 </table>
 -->
-<div class=“container-fluid”>
-  <div class=“row”>
+<div class="container-fluid">
+  <div class="row">
     <% @products.each do |product| %>
-    <div class=“col-sm-2 col-md-4”>
+    <div class="col-sm-2 col-md-4">
       <% unless product.image_url.empty? %>
         <%= image_tag(product.image_url, class: "img-responsive") %>
         <% end %>
-      <a href=“#”><h4><%= product.name %></h4></a>
+      <a href="#"><h4><%= product.name %></h4></a>
       <p><%= product.description %></p>
       <p><%= product.colour %></p>
       <strong><%= product.price %></strong>
+      <td><%= link_to 'Show', product %></td>
+      <td><%= link_to 'Edit', edit_product_path(product) %></td>
+      <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </div>
     <% end %>
   </div>
