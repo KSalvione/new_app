@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'controllers/orders_controller'
 
   get 'static_pages/landing_page'
 
