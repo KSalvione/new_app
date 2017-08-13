@@ -21,19 +21,21 @@
       <!--==========-->
       <!--NAVIGATION-->
       <!--==========-->
-  	 <nav class="navbar navbar-default navbar-fixed-top">
+  	 <nav class="navbar navbar-default navbar-fixed top">
       <div class="container">
   		  <ul>
          <li><%= link_to 'Products', products_path %></li>
   			 <li><%= link_to 'About', static_pages_about_path %></li>
   			 <li><%= link_to 'Contact', static_pages_contact_path %></li>
-  		  </ul>
-        <h1 id="bb"><a href="#">BB</a></h1>
-        <%= form_with(url: products_path, method: 'get') do |form| %>
+         <li>
+         <%= form_with(url: products_path, method: 'get') do |form| %>
           <%= form.label :q, 'Search for:' %>
           <%= form.text_field :q, id: 'q', value: params[:q] %>
           <%= form.submit 'Search' %>
-        <% end %>
+          <% end %>
+          </li>
+  		  </ul>
+        <h1 id="bb"><a href="#">BB</a></h1>
 
       </div><!--end the navigation bar container-->
   	 </nav>
