@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
-  #root 'static_pages#landing_page' <--TEMPORARILY REROUTED
-  #get 'static_pages/index' <--TEMPORARILY REROUTED
+  root 'static_pages#landing_page' #TEMPORARILY REROUTED
+  get 'static_pages/index' #TEMPORARILY REROUTED
 
   root 'static_pages#about' #5.1 TEMPORARILY REROUTED TO ABOUT PAGE
   get 'static_pages/about' #5.1 TEMPORARILY REROUTED TO ABOUT PAGE
