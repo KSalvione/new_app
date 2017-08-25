@@ -59,4 +59,6 @@ gem 'jquery-rails'
 
 gem 'devise'
 
+gem 'cancancan', '~>2.0'
+
 
