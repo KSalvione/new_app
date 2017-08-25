@@ -21,7 +21,7 @@
       <!--==========-->
       <!--NAVIGATION-->
       <!--==========-->
-  	 <nav class="navbar navbar-default navbar-fixed top">
+  	 <nav class="navbar navbar-default navbar-fixed top navbar-collapse">
       <div class="container">
   		  <ul>
          <li><%= link_to 'Products', products_path %></li>
@@ -35,10 +35,22 @@
           <% end %>
           </li>
   		  </ul>
+        <ul class="nav pull-right">
+          <li>
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+            <% else %>
+              <%= link_to('Login', new_user_session_path) %>
+            <% end %>
+          </li>
+        </ul>
         <h1 id="bb"><a href="#">BB</a></h1>
 
       </div><!--end the navigation bar container-->
   	 </nav>
+
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
 
       <%= yield %>
 
