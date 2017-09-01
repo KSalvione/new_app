@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   root 'static_pages#landing_page' #TEMPORARILY REROUTED
   get 'static_pages/index' #TEMPORARILY REROUTED
 
-  root 'static_pages#about' #5.1 TEMPORARILY REROUTED TO ABOUT PAGE
+  #root 'static_pages#about' #5.1 TEMPORARILY REROUTED TO ABOUT PAGE
   get 'static_pages/about' #5.1 TEMPORARILY REROUTED TO ABOUT PAGE
 
   post 'static_pages/thank_you'
