@@ -1,32 +1,40 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<div class="container" id="productShow">
+  <div class="row">
+    <div class="col-md-4">
+      <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @product.name %>
-  </p>
+      <p>
+        <strong>Name:</strong>
+        <%= @product.name %>
+      </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @product.description %>
-  </p>
+      <p>
+        <strong>Description:</strong>
+        <%= @product.description %>
+      </p>
 
-  <p>
-    <strong>Image URL:</strong>
-    <%= @product.image_url %>
-  </p>
+      <p>
+        <strong>Image URL:</strong>
+        <%= @product.image_url %>
+      </p>
 
-  <p>
-    <strong>Colour:</strong>
-    <%= @product.colour %>
-  </p>
+      <p>
+        <strong>Colour:</strong>
+        <%= @product.colour %>
+      </p>
 
-  <p>
-    <strong>Price:</strong>
-    <%= @product.price %>
-  </p>
+      <p>
+        <strong>Price:</strong>
+        <%= @product.price %>
+      </p>
 
-  <%= link_to 'Edit', edit_product_path(@product) %> 
-  <%= link_to 'Back', products_path %>
-  <%= @product.highest_rating_comment %>
-</div>
+      <%= link_to 'Edit', edit_product_path(@product) %> 
+      <%= link_to 'Back', products_path %>
+
+      <div class="container" id="commentArea">
+        <%= @product.highest_rating_comment %>
+      </div>
+      
+    </div><!--col div-->
+  </div><!--row div-->
+</div><!--main div-->

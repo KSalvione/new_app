@@ -6,7 +6,7 @@ class Product < ApplicationRecord
 	end
 
 	def highest_rating_comment
-		comments.rating_desc.first
+		Comment.rating_desc.first
 	end
 end
 
