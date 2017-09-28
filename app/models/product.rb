@@ -9,6 +9,10 @@ class Product < ApplicationRecord
 	def highest_rating_comment
 		Comment.rating_desc.first #capitalized because lowercase C produced an error
 	end
+
+	def average_rating
+		comments.average(:rating).to_f
+	end
 end
 
 

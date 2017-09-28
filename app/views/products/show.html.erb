@@ -32,6 +32,7 @@
       <%= link_to 'Back', products_path %>
 
       <div class="container" id="commentArea">
+        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"</div> </p>
         <%= @product.highest_rating_comment %>
         <%= render 'new_comment' %>
         <%= render 'comments' %>
