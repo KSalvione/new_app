@@ -1,4 +1,5 @@
 <div class="product-reviews">
+	<% if !@comments.nil? %>
 	<% @comments.each do |comment| %>
 		<div class="row">
 			<hr>
@@ -6,5 +7,6 @@
 			<p><%= "Rating: #{comment.rating}/5" %></p>
 			<p><%= comment.body %></p>
 		</div>
+	<% end %>
 	<% end %>
 </div>
