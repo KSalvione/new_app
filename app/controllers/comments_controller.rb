@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 				format.html { redirect_to @product, alert: 'Review was not saved successfully.'}
 				format.json { render json: @comment.errors, status: :unprocessable_entity }
 			end
-			@comment.paginate(:page => params[:page], :per_page => 5)
+			#@comment.paginate(:page => params[:page], :per_page => 5)
 		end
 		#redirect_to product_path(@product)
 	end
