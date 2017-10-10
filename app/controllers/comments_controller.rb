@@ -17,7 +17,11 @@ class CommentsController < ApplicationController
 		#redirect_to product_path(@product)
 	end
 
-	def destroy
+	def destroy #adds ability to delete
+		@comment = Comment.find(params[:id])
+		product = @comment.product
+		@comment.destroy
+		redirect_to product
 	end
 
 private
