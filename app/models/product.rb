@@ -9,7 +9,7 @@ class Product < ApplicationRecord
 	end
 
 	def highest_rating_comment
-		Comment.rating_desc.first #capitalized because lowercase C produced an error
+		comments.rating_desc.first #capitalized because lowercase C produced an error
 	end
 
 	def average_rating
