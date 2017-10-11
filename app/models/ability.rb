@@ -6,7 +6,7 @@ class Ability #begin by defining user permissions w the ability class
         if user.admin?
         	can :manage, :all
         else
-        	can :read, :all
+        	can :manage, User, id: user.id
         end
         #can :manage, User, id: user.id #manage is the action to the CAN argument
     end
