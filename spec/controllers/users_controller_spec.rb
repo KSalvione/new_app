@@ -3,6 +3,7 @@ require 'rails_helper'
 describe UsersController, type: :controller do
 	before do
 		@user = User.create!(email: "user@user.com", password: "password")
+		@user2 = User.create!(email: "user2@user.com", password: "password")
 	end
 
 	describe 'GET #show' do
@@ -26,6 +27,19 @@ describe UsersController, type: :controller do
 				expect(response).to redirect_to(new_user_session_path)
 			end
 		end
+
+		context 'User cannot view other user page' do
+			before do
+				sign_in @user2
+			end
+
+			it 'redirects to root path' do
+				get :show, params: { id: @user.id }
+				expect(response).to redirect_to(root_path)
+			end
+
+		end
+
 
 	
 end
