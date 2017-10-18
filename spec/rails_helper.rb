@@ -26,9 +26,16 @@ require 'rspec/rails'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+require 'spec_helper'
+require 'rspec/rails'
+#note: require 'devise' after require 'rspec/rails'
+require 'devise'
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  #for Devise >= 4.1.0
+  config.include Devise::Test::ControllerHelpers, :type => :controller
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

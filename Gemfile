@@ -38,6 +38,8 @@ group :development, :test do
   gem 'sqlite3'
   # RSpec testing framework
   gem 'rspec-rails', '~> 3.6'
+  #functional tests
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -59,7 +61,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails'
 
-gem 'devise'
+#gem 'devise'
+gem 'devise', '~> 4.2'
 
 gem 'cancancan', '~>2.0'
 
