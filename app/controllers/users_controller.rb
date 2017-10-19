@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show, :index]#to make sure user is signed in first
+  before_action :authenticate_user!#to make sure user is signed in first
   load_and_authorize_resource#ensures user is authorized to perform action
 
   # GET /users
