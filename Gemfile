@@ -70,4 +70,7 @@ gem 'cancancan', '~>2.0'
 ## Gemfile for Rails 3+, SInatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
 
+# Stripe payment system
+gem 'stripe'
+
 
