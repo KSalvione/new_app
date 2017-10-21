@@ -8,9 +8,9 @@ describe Product do #testing the product model
 		before do
 			@product = FactoryGirl.create(:product)
 			@user = FactoryGirl.create(:user)
-			@product.comments.create!(rating: 1, user: user, body: "Awful bike!")
-			@product.comments.create!(rating: 3, user: user, body: "Ok bike!")
-			@product.comments.create!(rating: 5, user: user, body: "great bike!")
+			@product.comments.create!(rating: 1, user: @user, body: "Awful bike!")
+			@product.comments.create!(rating: 3, user: @user, body: "Ok bike!")
+			@product.comments.create!(rating: 5, user: @user, body: "great bike!")
 		end
 
 
