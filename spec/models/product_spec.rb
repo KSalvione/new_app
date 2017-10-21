@@ -1,8 +1,6 @@
 require 'rails_helper' #gets access to rspec tests config
 
 describe Product do #testing the product model
-	let(:product) { Product.create!(name:"race bike!") } #created test product
-	let(:user) { User.create!(email: "spec1@spec1.com", password: "password") } #created user
 
 	context "when the product has comments" do
 
