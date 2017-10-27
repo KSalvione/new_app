@@ -75,4 +75,6 @@ gem 'stripe'
 
 gem "brakeman", :require => false
 
+gem 'elevatezoom-rails'
+
 
