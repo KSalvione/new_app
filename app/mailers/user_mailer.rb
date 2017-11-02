@@ -7,4 +7,9 @@ class UserMailer < ApplicationMailer
 			:to => 'kristel.salv@gmail.com',
 			:subject => "A new contact form message from #{name}")
 	end
+
+	def welcome(user)
+		@appname="BB Blades"
+		mail(to: user.email, subject: "Welcome to #{@appname}!")
+	end
 end
