@@ -3,7 +3,6 @@ class UserRegistrationsController < Devise::RegistrationsController
 		super
 		if @user.persisted?
 			UserMailer.welcome(@user).deliver_now
-			redirect_to sign_in_path
 		end
 	end
 
