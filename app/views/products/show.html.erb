@@ -4,10 +4,10 @@
       <div class="col-md-4">
         <p id="notice"><%= notice %></p>
 
-        <p>
-          <strong>Name:</strong>
+        <% cache @product do %>
+        <h2>
           <%= @product.name %>
-        </p>
+        </h2>
 
         <p>
           <strong>Description:</strong>
@@ -31,6 +31,7 @@
           <strong>Price:</strong>
           <%= @product.price %>
         </p>
+        <% end %>
 
         <%= form_with(url: '/payments/create') do |form| %>
           <%= render partial: "shared/stripe_checkout_button" %>

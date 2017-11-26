@@ -2,11 +2,14 @@
   <% unless product.image_url.empty? %>
     <%= image_tag(product.image_url, width:"400", class: "img-responsive img-zoom", data_zoom_image: product.image_url ) %>
   <% end %>
+
+  <% cache product do %>
   <a href="#"><h4><%= product.name %></h4></a>
   <p><%= product.description %></p>
   <p><%= product.colour %></p>
   <strong><%= product.price %></strong>
   <td><%= link_to 'Show', product %></td>
   <td><%= link_to 'Edit', edit_product_path(product) %></td>
-  <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'sure?' } %></td>
+  <% end %>
 </div>
