@@ -16,6 +16,9 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+#Redis install
+config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
+
 module NewApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
