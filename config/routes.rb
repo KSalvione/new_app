@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   resources :products do #a nested resource block
     resources :comments #a nested resource block
   end
+
+  mount ActionCable.server => '/cable'
+  
   resources :users #a nested resource block
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
