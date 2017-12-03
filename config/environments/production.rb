@@ -102,4 +102,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
     config.assets.unknown_asset_fallback = true
+
+  config.web_socket_server_url = "wss://bb-blades.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://bb-blades.herokuapp.com', 'http://bb-blades.herokuapp.com']
 end
