@@ -16,8 +16,6 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-#Redis install
-config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
 
 module NewApp
   class Application < Rails::Application
@@ -30,5 +28,8 @@ module NewApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    #Redis install
+	config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
   end
 end
