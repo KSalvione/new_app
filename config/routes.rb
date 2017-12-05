@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   #root 'static_pages#about' #5.1 TEMPORARILY REROUTED TO ABOUT PAGE
   get 'static_pages/about' #5.1 TEMPORARILY REROUTED TO ABOUT PAGE
-  get 'static_pages/logout'
+  get 'logout/index'
 
   post 'static_pages/thank_you'
 
