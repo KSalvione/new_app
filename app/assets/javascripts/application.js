@@ -10,10 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require turbolinks
 //= require jquery3
 //= require jquery_ujs
+//= require rails-ujs
+//= require turbolinks
 //= require_tree .
 //= require jquery.raty
 //= require jquery.elevateZoom-3.0.8.min.js
