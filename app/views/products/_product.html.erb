@@ -1,6 +1,7 @@
 <div class="col-sm-2 col-md-4">
   <% unless product.image_url.blank? %>
     <%= image_tag(product.image_url, width:"400", class: "img-responsive img-zoom", data_zoom_image: product.image_url ) %>
+  <% end %>
 
   <% cache product do %>
   <a href="#"><h4><%= product.name %></h4></a>
