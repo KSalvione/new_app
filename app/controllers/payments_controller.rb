@@ -1,4 +1,6 @@
 class PaymentsController < ApplicationController
+	before_action :authenticate_user!
+	
 	def create
 		@product = Product.find(params[:product_id])
 		@user = current_user#PROBLEM HERE???
@@ -7,7 +9,7 @@ class PaymentsController < ApplicationController
 		#Create the charge on Stripe servers, this will charge the user's card
 		begin
 			charge = Stripe::Charge.create(
-				amount: (@product.price*100).to_i,
+				amount: (@product.price).to_i,
 				currency: "usd",
 				source: token,
 				description: params[:stripeEmail],
@@ -15,8 +17,8 @@ class PaymentsController < ApplicationController
 			)
 
 			if charge.paid
-				Order.create!(product_id: @product.id, user_id: @user_id, total: @product.price )
-				flash[:success] = "Your payment was successful"
+				Order.create(product_id: @product.id, user_id: @user_id, total: @product.price )
+				flash[:alert] = "Your payment was successful"
 			end
 
 		rescue Stripe::CardError => e

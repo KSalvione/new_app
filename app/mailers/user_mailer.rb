@@ -12,4 +12,8 @@ class UserMailer < ApplicationMailer
 		@appname="BB Blades"
 		mail(to: user.email, subject: "Welcome to #{@appname}!")
 	end
+
+	def receipt_email(user)
+		mail(to: user.email, subject: "Thanks for your purchase")
+	end
 end

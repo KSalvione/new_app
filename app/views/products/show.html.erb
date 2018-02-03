@@ -30,6 +30,7 @@
         <p>
           <strong>Price:</strong>
           <%= @product.price %>
+          helper.number_to_currency(@product.price)
         </p>
         <% end %>
 
