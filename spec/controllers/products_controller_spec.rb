@@ -21,15 +21,29 @@ require 'rails_helper'
 		end
 
 
-	describe "validations" do
-		#testing validations
-			context 'when a GET request matches no search_term' do
-				it 'displays all products' do
-					get :index
-					expect(assigns(:products)).to.match_array([@product.all])
+		describe "validations" do
+			#testing validations
+				context 'when a GET request matches no search_term' do
+					it 'displays all products' do
+						get :index
+						expect(assigns(:products)).to.match_array([@product.all])
+					end
 				end
 			end
 		end
-	end
+
+		before do
+			@user = FactoryGirl.create(:user)
+			@admin = FactoryGirl.create(:admin)
+			
+			describe 'GET #show' do
+				context 'shows the show page' do
+					it 'displays the show page' do
+						sign_in @admin
+						get :show, params: {id: @product1}
+						expect(response).to be_ok
+					end
+				end
+			end
 
 end
