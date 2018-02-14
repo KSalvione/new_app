@@ -18,7 +18,11 @@ require 'rails_helper'
 					expect(response).to render_template('index')
 				end
 			end
+		end
 
+
+	describe "validations" do
+		#testing validations
 			context 'when a GET request matches no search_term' do
 				it 'displays all products' do
 					get :index
@@ -27,4 +31,5 @@ require 'rails_helper'
 			end
 		end
 	end
+
 end
