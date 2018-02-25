@@ -4,11 +4,12 @@ require 'rails_helper'
 
 		before do
 			@user = FactoryGirl.create(:user)
-			@admin = FactoryGirl.create(:admin)
-			@product1 = FactoryGirl.create(:product, name: "Red Blade", description: "Red Blade", color: "red", price: "100")
-			@product2 = FactoryGirl.create(:product, name: "Blue Blade", description: "Blue Blade", color: "blue", price: "100")
-			@product3 = FactoryGirl.create(:product, name: "White Blade", description: "White Blade", color: "white", price: "100")
-			@product4 = FactoryGirl.create(:product, name: "Pink Blade", description: "Pink Blade", color: "pink", price: "100")
+			@admin = FactoryGirl.create(:user, admin: true)
+			@product1 = FactoryGirl.create(:product, name: "Red Blade", description: "Red Blade", colour: "red", price: "100")
+			@product2 = FactoryGirl.create(:product, name: "Blue Blade", description: "Blue Blade", colour: "blue", price: "100")
+			@product3 = FactoryGirl.create(:product, name: "White Blade", description: "White Blade", colour: "white", price: "100")
+			@product4 = FactoryGirl.create(:product, name: "Pink Blade", description: "Pink Blade", colour: "pink", price: "100")
+		end
 
 		describe 'GET #index' do
 			context 'when a GET request matches a search_term' do
@@ -32,18 +33,14 @@ require 'rails_helper'
 			end
 		end
 
-		before do
-			@user = FactoryGirl.create(:user)
-			@admin = FactoryGirl.create(:admin)
-			
-			describe 'GET #show' do
-				context 'shows the show page' do
-					it 'displays the show page' do
-						sign_in @admin
-						get :show, params: {id: @product1}
-						expect(response).to be_ok
-					end
+
+		describe 'GET #show' do
+			context 'when a user opens show page' do
+				it 'loads the show page' do
+					get :show, id: @product.id
+					expect(response).to have_http_status(200)
+					expect(response).to be_ok
 				end
 			end
-
-end
+		end
+	end
